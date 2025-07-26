@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deathshoot Deathmatch</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(#1e1e2f, #0d0d14);
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    /* Animasi teks Deathshoot */
+    .animated-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, orange, red);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulseGlow 2s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      from { text-shadow: 0 0 5px red, 0 0 10px orange; }
+      to { text-shadow: 0 0 20px orange, 0 0 30px red; }
+    }
+
+    /* Efek typing VANNOSX */
+    .typing {
+      font-family: monospace;
+      font-size: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid orange;
+      width: 0;
+      animation: typing 3s steps(8, end) forwards, blink 0.7s step-end infinite;
+      margin: auto;
+      color: orange;
+      font-weight: bold;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 8ch }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="text-center py-20 bg-gradient-to-b from-black to-gray-900">
+    <h1 class="animated-title">Deathshoot Deathmatch</h1>
+    <p class="text-xl mt-4 text-gray-300 italic">Where Chaos Meets Skill</p>
+    <div class="mt-6">
+      <button id="joinBtn" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-xl">Join Now</button>
+      <a href="https://discord.gg/sQdTHdNRfD" target="_blank" class="ml-4 bg-gray-700 hover:bg-gray-800 text-white px-6 py-2 rounded-xl inline-block">Discord</a>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section class="section text-center">
+    <h2 class="text-3xl font-bold mb-10">Server Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div>
+        <h3 class="text-xl font-semibold">⚔️ Gangwars</h3>
+        <p class="mt-2 text-gray-400">Rebut wilayah dan buktikan siapa geng terkuat.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold">🔫 Deathmatch</h3>
+        <p class="mt-2 text-gray-400">Skill murni tanpa ampun di arena tempur.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold">🚗 Freeroam</h3>
+        <p class="mt-2 text-gray-400">Jelajahi dunia tanpa batas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Server -->
+  <section class="section bg-gray-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold">Tentang Server</h2>
+      <p class="mt-4 text-gray-400">
+        Deathshoot Deathmatch adalah server SA-MP yang menawarkan pengalaman PvP intens dengan mode Gangwars, Deathmatch, dan Freeroam. Dibangun untuk komunitas yang haus akan aksi dan tantangan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Join Instructions -->
+  <section class="section text-center">
+    <h2 class="text-3xl font-bold">Cara Bergabung</h2>
+    <p class="mt-4 text-gray-300">IP: <code class="text-red-500 font-semibold" id="serverIP">159.65.14.221:7045</code></p>
+    <p class="mt-2 text-gray-400">Gunakan SA-MP Client versi terbaru untuk masuk ke dalam dunia Deathshoot!</p>
+  </section>
+
+  <!-- Developer Credit (Animated Typing) -->
+  <section class="section text-center bg-black">
+    <div class="typing">VANNOSX</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-black text-gray-500">
+    <p>&copy; 2025 Deathshoot Deathmatch. All rights reserved.</p>
+    <p class="mt-1 text-sm text-gray-600">Developed by <span class="text-white font-semibold">VANNOSX</span></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById("joinBtn").addEventListener("click", function () {
+      const ip = document.getElementById("serverIP").textContent;
+      navigator.clipboard.writeText(ip).then(() => {
+        alert("IP server berhasil disalin ke clipboard: " + ip);
+      });
+    });
+  </script>
+</body>
+</html>
